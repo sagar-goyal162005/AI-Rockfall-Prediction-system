@@ -120,3 +120,8 @@ celerybeat.pid
 .mypy_cache/
 .dmypy.json
 dmypy.json
+
+# Tool indexing
+.codeatlas/
+# Tool indexing
+.codeatlas/

@@ -68,7 +68,7 @@ const SoilRockClassifier = () => {
 
     try {
       console.log('Sending classification request...');
-      const response = await fetch('http://localhost:5001/classify', {
+      const response = await fetch('/api/soil-rock/classify', {
         method: 'POST',
         body: formData,
       });
@@ -105,7 +105,7 @@ const SoilRockClassifier = () => {
       }
     } catch (error) {
       console.error('Network error:', error);
-      setError(`Network error: ${error.message}. Please ensure the classification server is running on port 5001.`);
+      setError(`Network error: ${error.message}. Please ensure the backend server is running on port 5000.`);
       setClassification(null);
     } finally {
       setLoading(false);

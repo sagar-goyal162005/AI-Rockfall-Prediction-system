@@ -14,8 +14,8 @@ const Login = ({ onLogin }) => {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState('');
 
-  // API Base URL
-  const API_BASE_URL = 'http://localhost:5003';
+  // API Base URL - uses React proxy (package.json proxy: http://localhost:5000)
+  const API_BASE_URL = '';
 
   // Handle input changes
   const handleInputChange = (e) => {
@@ -151,7 +151,7 @@ const Login = ({ onLogin }) => {
       
       // Handle different types of errors
       if (error.code === 'ECONNREFUSED' || error.message.includes('Network Error')) {
-        setError('Unable to connect to the authentication service. Please ensure the backend is running on port 5003.');
+        setError('Unable to connect to the authentication service. Please ensure the backend is running on port 5000.');
       } else if (error.response) {
         // Server responded with error status
         const errorData = error.response.data;
@@ -366,7 +366,7 @@ const Login = ({ onLogin }) => {
           <div className="text-center">
             <small className="text-muted">
               <i className="fas fa-server me-1"></i>
-              Authentication Service: {API_BASE_URL}
+              Authentication Service: {API_BASE_URL || 'http://localhost:5000'}
             </small>
           </div>
         </div>

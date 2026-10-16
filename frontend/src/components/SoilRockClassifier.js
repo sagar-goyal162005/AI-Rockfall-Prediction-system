@@ -58,7 +58,7 @@ const SoilRockClassifier = () => {
     formData.append('image', selectedImage.file);
 
     try {
-      const response = await fetch('http://localhost:5001/classify', {
+      const response = await fetch('/api/soil-rock/classify', {
         method: 'POST',
         body: formData,
       });

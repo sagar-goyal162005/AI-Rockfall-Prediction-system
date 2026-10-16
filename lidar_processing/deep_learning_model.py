@@ -1017,6 +1017,7 @@ class RockfallLSTMPredictor:
         self.model = None
         self.scaler = StandardScaler()
         self.label_encoder = LabelEncoder()
+        self.is_trained = False
         
         # Setup logging
         self.logger = logging.getLogger(self.__class__.__name__)

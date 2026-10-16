@@ -15,7 +15,7 @@ const Reports = () => {
   const fetchReports = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('http://localhost:5000/api/reports/history');
+      const response = await axios.get('/api/reports/history');
       setReports(response.data.reports);
     } catch (error) {
       setError('Failed to fetch reports');
@@ -31,7 +31,7 @@ const Reports = () => {
       setError('');
       setSuccess('');
 
-      const response = await axios.post('http://localhost:5000/api/reports/generate', {
+      const response = await axios.post('/api/reports/generate', {
         report_type: reportType
       });
 
